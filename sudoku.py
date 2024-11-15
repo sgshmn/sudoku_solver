@@ -17,11 +17,10 @@ p = [[0,2,0,0,9,0,8,1,0],
 # 2. 문제 풀기
 
 #   1) 바로 풀 수 있으면 다 풀기
+# test
 
-for i in range(9):
-    for j in range(9):
-
-
+# for i in range(9):
+#     for j in range(9):
 
 
 #   2) 바로 풀 수 없으면 하나씩 대입
