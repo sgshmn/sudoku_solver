@@ -38,7 +38,7 @@ p=[[0,1,0,9,0,0,0,8,7],
 col = [[0 for i in range(9)] for i in range(9)]
 
 # b = box (3*3)
-b = [[] for i in range(9)]
+box = [[] for i in range(9)]
 
 # 각각 비교를 위한 분류작업
 for i in range(9):
@@ -47,25 +47,25 @@ for i in range(9):
         col[j][i]=p[i][j]
         # box
         if i<=2 and j<=2:
-            b[0].append(p[i][j])
+            box[0].append(p[i][j])
         elif i<=2 and j<=5:
-            b[1].append(p[i][j])
+            box[1].append(p[i][j])
         elif i<=2 and j<9:
-            b[2].append(p[i][j])
+            box[2].append(p[i][j])
 
         if 2<i<=5 and j<=2:
-            b[3].append(p[i][j])
+            box[3].append(p[i][j])
         elif 2<i<=5 and j<=5:
-            b[4].append(p[i][j])
+            box[4].append(p[i][j])
         elif 2<i<=5 and j<9:
-            b[5].append(p[i][j])
+            box[5].append(p[i][j])
 
         if 5<i<9 and j<=2:
-            b[6].append(p[i][j])
+            box[6].append(p[i][j])
         elif 5<i<9 and j<=5:
-            b[7].append(p[i][j])
+            box[7].append(p[i][j])
         elif 5<i<9 and j<9:
-            b[8].append(p[i][j])
+            box[8].append(p[i][j])
 
 
 # 2. 문제 풀기
@@ -86,9 +86,14 @@ for i in range(9):
                 check1=9
             # 1개만 추출된 경우 답
             if len(s1-set(p[i])-set(b[j//check1])-set(col[j]))==1:
-                p[i][j]=list(s1-set(p[i])-set(b[j//check1])-set(col[j]))[0]
+                p[i][j]=list(s1-set(p[i])-set(box[j//check1])-set(col[j]))[0]
+
+# 전 문제를 저장, 바뀐 게 없다면 2단계 진헹
+exP = p
 
 print(p)
+
+
 
 # 여러번 돌린 결과
 # p = [[7, 2, 6, 3, 9, 4, 8, 1, 5], 
@@ -101,13 +106,11 @@ print(p)
 #      [6, 8, 7, 9, 5, 1, 3, 2, 4], 
 #      [2, 5, 4, 6, 3, 8, 1, 7, 9]]
 
-# <<<<<<< main
 # =======
-# # r = row
-# r = []
-# for i in range(9):
-#      r.append({1,2,3,4,5,6,7,8,9})
-# >>>>>>> main
+# r = row
+r = []
+for i in range(9):
+     r.append({1,2,3,4,5,6,7,8,9})
 
 # c = column
 c = []
