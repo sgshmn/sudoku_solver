@@ -88,7 +88,12 @@ for i in range(9):
             if len(s1-set(p[i])-set(b[j//check1])-set(col[j]))==1:
                 p[i][j]=list(s1-set(p[i])-set(b[j//check1])-set(col[j]))[0]
 
+# 전 문제를 저장, 바뀐 게 없다면 2단계 진헹
+exP = p
+
 print(p)
+
+
 
 # 여러번 돌린 결과
 # p = [[7, 2, 6, 3, 9, 4, 8, 1, 5], 
