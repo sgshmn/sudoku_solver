@@ -58,24 +58,30 @@ for i in range(9):
 #   1) 바로 풀 수 있으면 다 풀기
 #   - set 활용 (- 차집합)
 s1 = set([1,2,3,4,5,6,7,8,9])
-
+cccc=400
 # 변경이 있는지 비교할 숫자
 compare_n=0
-# while cccc>0:
+while cccc>0:
      # 변경이 없다면 중단
-     # if compare_n==blank_n:
-          # break
+     if compare_n==blank_n:
+          break
+     print(compare_n)
+     compare_n=blank_n
+     for i in range(9):
+          for j in range(9):
+               if p[i][j]==0:
+                    # i에 따른 box 체크
+                    n=(i//3+1)*3
+                    # 1개만 추출된 경우 답
+                    if len(s1-set(p[i])-set(b[j//n])-set(col[j]))==1:
+                         p[i][j]=list(s1-set(p[i])-set(b[j//n])-set(col[j]))[0]
+                         blank_n-=1 # 빈 곳이 채워지면 빼기
+                         print(blank_n)
+     cccc-=1
+     print("ccccheck", cccc)
 # 중간에 멈춤.. 다른 방법?
-print(compare_n)
-compare_n=blank_n
-for i in range(9):
-     for j in range(9):
-          if p[i][j]==0:
-               # i에 따른 box 체크
-               n=(i//3+1)*3
-               # 1개만 추출된 경우 답
-               if len(s1-set(p[i])-set(b[j//n])-set(col[j]))==1:
-                    p[i][j]=list(s1-set(p[i])-set(b[j//n])-set(col[j]))[0]
-                    blank_n-=1 # 빈 곳이 채워지면 빼기
+
+
+
 
 print(p)
