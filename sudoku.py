@@ -1,5 +1,5 @@
-import dotori
-from daramg import CheckNumber, solve
+import dotori, daramg
+from daramg import CheckNumber
 import copy
 
 print("감자")
@@ -45,16 +45,32 @@ if __name__ == "__main__":
         print(row)
 
     # 도토리 알고리즘 실행
-    dotori.solve(p)
+    p_dotori = copy.deepcopy(p)
+    dotori.solve(p_dotori)
 
-    p_copy = copy.deepcopy(p)
 
     # 다람쥐 알고리즘 실행
-    solve(p_copy)
-    p2 = CheckNumber(p_copy)
+    p_daramg = copy.deepcopy(p)
+    
+    daramg.solve(p_daramg)
+    p2 = CheckNumber(p_daramg)
     p2.devide()
     p2.solvee()
     p2.printP()
     # 원본이 바뀌었는지 확인
     print(p2.p == p)  # False여야 원본이 변경되지 않은 것
-    print(p)  # 원본 p가 초기 상태 그대로인지 확인
+    for i in p:       # 원본 p가 초기 상태 그대로인지 확인
+        print(i)  
+
+
+    # for i in range(9):
+    #     for j in range(9):
+    #         a=i//3*3 + j//3
+    #         print( a, end=' ')
+    #     print()
+    for i in range(9):
+        for j in range(9):
+            b=((i//3+1)*3)
+            print(b, end=' ')
+        print()
+            

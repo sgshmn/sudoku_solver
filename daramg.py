@@ -5,15 +5,17 @@ def solve(p):
 
 
 
-class CheckNumber:    # 클래스
-     blank_n=0
-     # col = column
-     col = [[0 for i in range(9)] for i in range(9)]    
-     # b = box (3*3)
-     b = [[] for i in range(9)]    
-      
+class CheckNumber:    # 클래스     
      def __init__(self, p):     
          self.p = p
+         self.blank_n = 0 # 빈 숫자 개수
+         # col = column
+         self.col = [[0 for i in range(9)] for i in range(9)]
+         # b = box (3*3)
+         # 0 1 2
+         # 3 4 5
+         # 6 7 8
+         self.b = [[] for i in range(9)]
  
      def printP(self):
           print(f'check blank : {self.blank_n}')
@@ -31,7 +33,6 @@ class CheckNumber:    # 클래스
                   self.col[j][i]=self.p[i][j]
                   # box # 도토리 ㅎ;
                   self.b[i//3*3 + j//3].append(self.p[i][j])
-          print(self.blank_n)
          
      # 2. 문제 풀기
      #   1) 바로 풀 수 있으면 다 풀기
