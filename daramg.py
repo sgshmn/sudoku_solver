@@ -53,10 +53,8 @@ class CheckNumber:    # 클래스
                for i in range(9):
                    for j in range(9):
                        if self.p[i][j]==0:
-                               # i에 따른 box 체크
-                               n=(i//3+1)*3
                                # 1개만 추출된 경우 답
-                               s2 = s1-set(self.p[i])-set(self.b[j//n])-set(self.col[j])
+                               s2 = s1-set(self.p[i])-set(self.b[i//3*3 + j//3])-set(self.col[j])
                                if len(s2)==1:
                                    self.p[i][j]=list(s2)[0]
                                    self.col[j][i]=self.p[i][j]
