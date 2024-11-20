@@ -1,4 +1,4 @@
-import dotori, daramg
+import daramg
 from daramg import CheckNumber
 import copy
 
@@ -62,18 +62,28 @@ if __name__ == "__main__":
     # 원래 문제 출력
     print("스도쿠 문제:")
     
-    p_dotori = copy.deepcopy(p)
-    dotori.solve(p_dotori)
+    # p_dotori = copy.deepcopy(p)
+    # dotori.solve(p_dotori)
 
 
     # 다람쥐 알고리즘 실행
-    p_daramg = copy.deepcopy(p2)
+    p_daramg = copy.deepcopy(p)
     
     daramg.solve(p_daramg)
     daram = CheckNumber(p_daramg)
     daram.devide()
-    # daram.solvee()
+    daram.solvee()
     daram.printP()
     # 원본이 바뀌었는지 확인
     print(daram.p == p2)  # False여야 원본이 변경되지 않은 것
-
+    
+    # aa = [[0 for i in range(9)] for i in range(9)]
+    # for i in range(9):
+    #     for j in range(9):
+    #         if j+1 == p[j][i]:
+    #             aa[j][i]+=1
+    
+    # for i in aa:
+    #     if 2 in i:
+    #         break
+    #     print(i)
