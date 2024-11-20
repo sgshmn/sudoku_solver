@@ -4,7 +4,6 @@ def solve(p):
     pass
 
 
-
 class CheckNumber:    # 클래스     
     def __init__(self, p):     
         self.p = p
@@ -76,6 +75,6 @@ class CheckNumber:    # 클래스
                                 # 가능한 수 비우기~
                                 self.possible_n[i][j].clear()
             cccc-=1
-            print("last-", self.blank_n)
+            print("last----check", self.blank_n)
 
 
